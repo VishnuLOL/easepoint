@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #timer {
+            font-size: 2em;
+            color: #333;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Time Periods-left:<p></p></h1>
+<div id="timer">00:30:00</div>
+<button onclick="startCountdown()">Start</button>
+<button onclick="stopCountdown()">Stop</button>
+<button onclick="resetCountdown()">Reset</button>
+
+<script>
+    let countdown;
+    let timeInSeconds = 1800; 
+    let pomodoros=0;
+    function startCountdown() {
+        countdown = setInterval(updateCountdown, 1000);
+    }
+
+    function stopCountdown() {
+        clearInterval(countdown);
+    }
+
+    function resetCountdown() {
+        clearInterval(countdown);
+        timeInSeconds = 1800;
+        updateDisplay();
+    }
+
+    function updateCountdown() {
+        if (timeInSeconds > 0) {
+            timeInSeconds--;
+
+        } 
+        else{
+            clearInterval(countdown);
+            alert('Take a break for 5 minutes');
+
+        }
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        const hours = Math.floor(timeInSeconds / 3600);
+        const minutes = Math.floor((timeInSeconds % 3600) / 60);
+        const seconds = timeInSeconds % 60;
+
+        const formattedTime = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+        document.getElementById('timer').innerText = formattedTime;
+    }
+
+    function pad(value) {
+        return value < 10 ? '0' + value : value;
+    }
+</script>
+
+
+
+</body>
+</html>
+

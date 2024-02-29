@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisen</title>
+    <link rel="stylesheet" href="eisen_styles.css">
+</head>
+<body>
+    <div id="transparency-container">
+    <h1>Eisenhower</h1><!--<button>+</button>
+    <span class='container'><div >Task-1:-<input id="task-1"/><select class="imp"><option>Important</option><option>UnImportant</option></select></div></span>-->
+    <form id="eisen-form">
+    
+        <fieldset id="do">
+          <legend>Do</legend>
+          <div class="input-container"><div>
+        </fieldset>
+        <fieldset id="decide">
+          <legend>Decide</legend>
+          <div class="input-container"></div>
+        </fieldset>
+        <fieldset id="delegate">
+          <legend>Delegate</legend>
+          <div class="input-container"></div>
+        </fieldset>
+        <fieldset id="delete">
+          <legend>Deelete</legend>
+          <div class="input-container"></div>
+        </fieldset>
+        </fieldset>
+        <div class="controls">
+          <span>
+          
+            <button type="button" id="add-entry">Add Entry</button>
+            <button type="button" id="clear-btn">Clear</button>
+          </span>
+        </div>
+        <div class="form-popup" id="myForm">
+          <form><input type="Text" placeholder="enter" id="entry-text"/>
+            <select id="imp-sel">
+              <option value="imp">Important</option>
+              <option value="nimp">Not Important</option>
+            </select>
+            <select id="urg-sel">
+              <option value="urg">Urgent</option>
+              <option value="nurg">Not Urgent</option>
+            </select>
+            <button type="button" id="submit-btn">Submit</button>
+          </form>
+
+        </div>
+        <div class="out-contain">
+          
+        </div>
+        <script src="eisen_script.js"></script>
+</body>
+</html>
